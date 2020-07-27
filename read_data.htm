@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse
+}
+</style>
+</head>
+
+<body>
+
+	<h1 style="color: red"> Welcome to Mobile Shop </h1>
+
+	CustomerName:<input type="text" onfocus="this.value=''" id="cus_name" autofocus>
+	Mobile:<input type="tel" id="mob_no" onfocus="this.value=''" name="mobile number" size="10" maxlength="10">
+	
+	<button type="button" onclick="add()">Add</button><br><br>
+	
+	<table id="tab">
+		<tr>
+			<th> Name </th>
+			<th> Mobile </th>
+		</tr>
+	</table>
+
+<script>
+
+function add(){
+	
+	var tab_obj = document.getElementById("tab");
+	var row     = tab_obj.insertRow(-1);
+	var cell1    = row.insertCell(0);
+	var cell2    = row.insertCell(1);
+	
+	cell1.innerHTML = document.getElementById("cus_name").value;
+	cell2.innerHTML = document.getElementById("mob_no").value;
+	console.log(tab_obj);
+}
+</script>
+
+</body>
+</html>
